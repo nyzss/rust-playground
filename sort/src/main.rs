@@ -43,7 +43,7 @@ fn main() {
 
 fn pair_nums(nums: &Vec<i32>) -> Vec<(i32, i32)>
 {
-    let mut pairs: Vec<(i32, i32)> = vec![];
+    let mut pairs: Vec<(i32, i32)> = Vec::with_capacity((nums.len() >> 1) + 1);
     let mut prev: i32 = 0;
     for (i, n) in nums.iter().enumerate()
     {
@@ -75,7 +75,7 @@ fn sort(nums: &Vec<i32>) -> Vec<i32>
     {
         return nums.clone();
     }
-    let mut bigger: Vec<i32> = vec![];
+    let mut bigger: Vec<i32> = Vec::with_capacity(nums.len());
     let pairs = pair_nums(nums);
 
     for pair in &pairs
